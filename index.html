@@ -14,7 +14,43 @@
     <main class="page-container">
       <h1>Hi there!</h1>
       <h2>I'm Jackson Callaway and I build websites and interactive art installations.</h2>
-      <a class="button" href="mailto:hello@jacksoncallaway.com">Get in Touch</a>
+      <button class="button" id="contact-open" type="button">Get in Touch</button>
     </main>
+
+    <dialog id="contact-dialog" aria-labelledby="contact-title">
+      <form id="contact-form" novalidate>
+        <div class="dialog-header">
+          <h3 id="contact-title">Get in Touch</h3>
+          <button type="button" class="dialog-close" id="contact-close" aria-label="Close">&times;</button>
+        </div>
+
+        <label>
+          Name
+          <input name="name" type="text" autocomplete="name" required maxlength="200" />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" required maxlength="254" />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required maxlength="5000"></textarea>
+        </label>
+        <!-- Honeypot: hidden from humans, irresistible to bots -->
+        <label class="hp" aria-hidden="true">
+          Website
+          <input name="website" type="text" tabindex="-1" autocomplete="off" />
+        </label>
+
+        <p class="form-status" id="contact-status" role="status"></p>
+
+        <button class="button" id="contact-submit" type="submit">Send</button>
+        <p class="form-alt">
+          or email <a href="mailto:hello@jacksoncallaway.com">hello@jacksoncallaway.com</a>
+        </p>
+      </form>
+    </dialog>
+
+    <script src="script.js" defer></script>
   </body>
 </html>

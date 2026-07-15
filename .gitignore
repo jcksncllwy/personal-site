@@ -398,3 +398,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# DO Functions require api/packages/ — override the template Packages rule above
+!api/packages/**

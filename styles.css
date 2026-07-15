@@ -51,13 +51,131 @@ h2 {
   padding: 0.9rem 2.25rem;
   border: 1px solid var(--fg);
   border-radius: 999px;
+  background: none;
   color: var(--fg);
   text-decoration: none;
+  font-family: inherit;
   font-size: 1rem;
   letter-spacing: 0.04em;
+  cursor: pointer;
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* Contact dialog */
+
+dialog {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: min(28rem, calc(100vw - 2rem));
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dialog-header h3 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+.dialog-close {
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.dialog-close:hover {
+  color: var(--fg);
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+#contact-form input,
+#contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.6rem 0.75rem;
+  background: none;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--fg);
+}
+
+#contact-form .button {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  min-height: 1.25rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.form-status.is-success {
+  color: #8fdf9f;
+}
+
+.form-status.is-error {
+  color: #e08a8a;
+}
+
+.form-alt {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+}
+
+.form-alt a {
+  color: var(--fg);
 }
 
 .button:hover,
