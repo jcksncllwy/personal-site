@@ -1,5 +1,84 @@
+@import "fonts.css";
+
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --fg-muted: #c9c9c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Pangaia", Georgia, serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 2rem;
+  text-align: center;
+  animation: fade-in 1.2s ease both;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 200;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 1.5rem 0 0;
+  max-width: 32ch;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.button {
+  margin-top: 3rem;
+  padding: 0.9rem 2.25rem;
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-container {
+    animation: none;
+  }
 }

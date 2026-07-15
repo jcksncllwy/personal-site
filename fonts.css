@@ -1,0 +1,15 @@
+/* PP Pangaia — self-hosted (assets CDN lacks CORS headers for cross-origin font loads) */
+@font-face {
+  font-family: "Pangaia";
+  src: url("fonts/PPPangaia-Ultralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pangaia";
+  src: url("fonts/PPPangaia-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
