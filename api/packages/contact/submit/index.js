@@ -2,9 +2,12 @@ const DESTINATION = "hello@jacksoncallaway.com";
 const FROM = "Website Contact <contact@jacksoncallaway.com>";
 const MAX_MESSAGE_LENGTH = 5000;
 
-function response(statusCode, body) {
+// Always HTTP 200: App Platform's gateway replaces 5xx function responses
+// with its own HTML error page, which breaks the client's JSON handling.
+// The client keys off body.ok instead.
+function response(_statusCode, body) {
   return {
-    statusCode,
+    statusCode: 200,
     headers: { "Content-Type": "application/json" },
     body,
   };
